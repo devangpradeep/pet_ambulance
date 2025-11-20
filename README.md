@@ -1,73 +1,195 @@
-# React + TypeScript + Vite
+# PetAmbulance - Emergency Pet Transportation Service
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive web application for a 24/7 emergency pet ambulance service. Built with React, TypeScript, and Vite, featuring a beautiful UI with Tailwind CSS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🚑 24/7 Emergency pet transportation service
+- 📱 Responsive design for all devices
+- 🎨 Modern UI with smooth animations and glassmorphism effects
+- 🐾 Professional pet care information
+- 📞 Easy contact and booking system
+- ⚡ Fast performance with Vite
 
-## React Compiler
+## Prerequisites
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Before you begin, ensure you have the following installed on your system:
 
-## Expanding the ESLint configuration
+- **Node.js** (version 18.0 or higher)
+- **npm** (version 9.0 or higher) or **yarn**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+You can verify your installations by running:
+```bash
+node --version
+npm --version
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Setup Instructions
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 1. Clone the Repository
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone git@github.com:devangpradeep/pet_ambulance.git
+cd pet_ambulance
 ```
+
+### 2. Install Dependencies
+
+Install all required packages using npm:
+
+```bash
+npm install
+```
+
+Or if you prefer yarn:
+
+```bash
+yarn install
+```
+
+This will install all dependencies listed in `package.json`, including:
+- React 19.2.0
+- TypeScript
+- Vite
+- Tailwind CSS
+- ESLint and related plugins
+
+### 3. Start the Development Server
+
+To run the application in development mode:
+
+```bash
+npm run dev
+```
+
+Or with yarn:
+
+```bash
+yarn dev
+```
+
+The development server will start, and you should see output similar to:
+```
+  VITE v7.2.4  ready in XXX ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+```
+
+Open your browser and navigate to `http://localhost:5173/` to view the application.
+
+The development server includes:
+- ⚡ Hot Module Replacement (HMR) - changes appear instantly
+- 🔍 TypeScript type checking
+- 🎨 Tailwind CSS compilation
+
+## Available Scripts
+
+### Development
+
+```bash
+npm run dev
+```
+Starts the Vite development server with hot reload at `http://localhost:5173/`
+
+### Build
+
+```bash
+npm run build
+```
+Compiles TypeScript and builds the production-ready application to the `dist/` folder. The build is optimized and minified.
+
+### Preview
+
+```bash
+npm run preview
+```
+Locally preview the production build before deployment. Run this after `npm run build`.
+
+### Lint
+
+```bash
+npm run lint
+```
+Runs ESLint to check code quality and identify potential issues.
+
+```bash
+npm run lint:fix
+```
+Automatically fixes all auto-fixable linting errors.
+
+For detailed ESLint configuration and usage, see [ESLINT_SETUP.md](ESLINT_SETUP.md).
+
+## Project Structure
+
+```
+pet_ambulance/
+├── public/              # Static assets
+│   └── favicon.png      # Pet ambulance favicon
+├── src/                 # Source files
+│   ├── components/      # React components
+│   ├── main.tsx        # Application entry point
+│   └── index.css       # Global styles and Tailwind directives
+├── index.html          # HTML template
+├── package.json        # Project dependencies and scripts
+├── tailwind.config.js  # Tailwind CSS configuration
+├── tsconfig.json       # TypeScript configuration
+└── vite.config.ts      # Vite configuration
+```
+
+## Technology Stack
+
+- **React 19.2** - UI library
+- **TypeScript** - Type-safe JavaScript
+- **Vite** - Fast build tool and dev server
+- **Tailwind CSS** - Utility-first CSS framework
+- **ESLint** - Code linting and quality
+
+## Development Tips
+
+1. **Hot Reload**: Save any file to see changes instantly in the browser
+2. **TypeScript**: The project uses strict TypeScript - type errors will show in the console
+3. **Tailwind**: Use Tailwind utility classes for styling - check `tailwind.config.js` for custom theme
+4. **Components**: All React components are in the `src/components/` directory
+
+## Troubleshooting
+
+### Port Already in Use
+
+If port 5173 is already in use, Vite will automatically try the next available port. You can also specify a custom port:
+
+```bash
+npm run dev -- --port 3000
+```
+
+### Dependencies Issues
+
+If you encounter dependency issues, try:
+
+```bash
+rm -rf node_modules package-lock.json
+npm install
+```
+
+### Build Errors
+
+Ensure TypeScript compilation passes:
+
+```bash
+npx tsc --noEmit
+```
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## License
+
+This project is private and proprietary.
+
+## Support
+
+For questions or issues, please contact the development team.
